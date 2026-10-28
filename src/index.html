@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fully Prepared — Call Sessions</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./session-controls.css" />
+    <link rel="stylesheet" href="./privacy-controls.css" />
+    <link rel="stylesheet" href="./speech-output.css" />
+    <link rel="stylesheet" href="./first-run-setup.css" />
+    <link rel="stylesheet" href="./job-link.css" />
+    <link rel="stylesheet" href="./crash-settings.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-row"><div class="parrot-mark" role="img" aria-label="Fully Prepared logo"><svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="logoLeaf" x1="10" y1="8" x2="40" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#D8F342"/><stop offset="1" stop-color="#72BC35"/></linearGradient></defs><circle cx="24" cy="24" r="22" fill="#EAF8EF"/><path d="M31.7 7.7c-10.8.7-18.6 7-19.1 17.2-.3 6.1 2.8 11.1 8.1 13.2 4.5 1.8 9.2-.1 11.5-4.1 2.8-4.9 2.2-11.4-1.3-15.7-1.7-2.1-2.4-5.8.8-10.6Z" fill="#168A4A"/><path d="M35.2 10.5c-4.3 3-6.8 6.4-6.1 10.1 1.1 5.5 7 8.2 8.3 15.7 3.7-5.2 4.3-11.4 1.8-16.7-1.1-2.4-2.4-5.7-4-9.1Z" fill="url(#logoLeaf)"/><path d="M13.9 24.8c3.8-4.7 8.2-6.4 12.1-4.4 3.5 1.8 4.4 6.1 2.2 9.2-2.3 3.2-7.2 4.2-10.5 2.1-2.1-1.3-3.5-3.9-3.8-6.9Z" fill="#F6FAF1"/><circle cx="25.8" cy="19.7" r="3.2" fill="#152520"/><circle cx="26.8" cy="18.7" r=".9" fill="#fff"/><path d="M13.5 25.2 7.8 28.6c-.8.5-.5 1.7.4 1.8l7.1.5c1.8.1 2.8-2 1.5-3.2l-3.3-2.5Z" fill="#F3B63F"/></svg></div><strong>Fully Prepared</strong><button class="collapse-button">◧</button></div>
+        <nav>
+          <p class="nav-label">Call Assistant</p>
+          <button class="nav-link create-link" data-view="create"><span class="plus">＋</span>Create session</button>
+          <button class="nav-link active" data-view="sessions"><span>▥</span>Call Sessions</button>
+          <button class="nav-link" data-view="resumes"><span>▣</span>Resumes</button>
+          <button class="nav-link" data-view="documents"><span>▤</span>Documents</button>
+          <p class="nav-label prepare-label">Prepare</p>
+          <button class="nav-link" data-view="questions"><span>▱</span>Question Bank</button>
+          <button class="nav-link" data-view="mock"><span>♧</span>Mock Interview</button>
+          <button class="nav-link" data-view="resume-maker"><span>◩</span>Resume Maker</button>
+          <button class="nav-link" data-view="headshots"><span>◇</span>Headshots</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="free-card"><div class="plan-title"><span class="gift">♧</span> Always free</div><strong>No credits. No subscriptions.</strong><p>Use your own model or run locally.</p><button class="model-button" id="modelButton">Configure model</button></div>
+          <button class="theme-row"><span>☼</span> Theme <span class="theme-value">Light　›</span></button>
+          <div class="account-row"><span class="avatar" id="accountAvatar">U</span><span class="account-email" id="accountUsername">Your workspace</span><span>⋮</span></div>
+        </div>
+      </aside>
+
+      <main class="main-content" id="mainContent" tabindex="-1">
+        <header class="topbar"><div><h1 id="pageTitle">Call Sessions</h1><p id="pageSubtitle">Prepare for calls and review past sessions.</p></div><button class="create-session" id="createSession">Create session <span>⌄</span></button></header>
+        <section class="dashboard-view" id="sessionsView">
+          <section class="mock-banner"><button class="close-banner">×</button><div class="banner-copy"><p class="banner-kicker">MOCK INTERVIEW</p><h2>Rehearse the interview before the real<br />one.</h2><p>An AI interviewer asks the questions out loud while Fully Prepared<br />drafts your answers beside you, exactly as it will on the day.<br />Your first mock is free.</p><div class="banner-actions"><button class="start-button" id="startMock">♩　Start a mock interview</button><button class="learn-button">▣　How a mock interview works　›</button></div></div><div class="waveform" aria-hidden="true">▏▎▍▎▌▎▍▏▎▌▍▎▌▎▍▏▎▌▎▍▌▏▎▍▎▌▏▍▎▌▏▎▍▌▎▏▎▍▌▏▎▍▎▌▏▍▎▌▏▎▍▌▎▏▎▍▌▏▎▍▎▌▏▍▎▌▏▎▍▌▎▏▎▍▌▏</div></section>
+          <div class="dashboard-tools" id="dashboardTools"><label class="session-search"><span>⌕</span><input id="sessionSearch" type="search" placeholder="Search sessions" aria-label="Search sessions" /></label><select id="sessionFilter" aria-label="Filter sessions"><option value="all">All sessions</option><option value="interview">Interviews</option><option value="regular">Regular calls</option><option value="mock">Mock interviews</option></select><select id="sessionSort" aria-label="Sort sessions"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></div>
+          <section class="welcome-card"><div class="welcome-art"><div class="art-parrot">●</div><div><strong>Welcome aboard!</strong><span>Start here to see how it works</span></div></div><div class="welcome-footer"><div><span class="ready-dot"></span> Ready to Start<p>Introduction</p></div><button id="startWelcome">Start Session</button></div></section>
+          <section class="session-history hidden" id="sessionHistory"><div class="history-heading"><div><p class="banner-kicker">YOUR PRACTICE</p><h2>Recent sessions</h2></div><button id="clearHistory" class="history-clear">Clear history</button></div><div id="sessionCards" class="session-cards"></div></section>
+          <div class="transcript-modal hidden" id="transcriptModal"><div class="transcript-panel"><button class="flow-close" id="closeTranscript">×</button><p class="settings-kicker">SESSION TRANSCRIPT</p><h2 id="transcriptTitle">Mock interview</h2><p id="transcriptMeta" class="transcript-meta"></p><div id="transcriptMessages" class="transcript-messages"></div></div></div>
+        </section>
+        <section class="placeholder-view hidden" id="placeholderView"><div class="placeholder-icon">✦</div><h2 id="placeholderTitle">Create a session</h2><p id="placeholderText">Choose a workspace action from the sidebar to get started.</p><button class="create-session" id="placeholderAction">Create session <span>→</span></button></section>
+        <section class="settings-view hidden" id="settingsView"><div class="settings-card"><p class="settings-kicker">MODEL SETTINGS</p><h2>Bring your own model</h2><p class="settings-intro">Fully Prepared is free forever. Connect a local model or any compatible endpoint. Your configuration stays on this device.</p><label>Provider<select id="providerSelect"><option value="ollama">Ollama (local)</option><option value="lmstudio">LM Studio (local)</option><option value="openai">OpenAI-compatible endpoint</option><option value="custom">Custom provider</option></select></label><div class="settings-row"><label>Model name<input id="modelName" placeholder="e.g. llama3.2:3b" /></label><label>Endpoint URL<input id="endpointUrl" placeholder="http://localhost:11434" /></label></div><label>API key <span class="optional">optional · encrypted on this device</span><input id="apiKey" type="password" autocomplete="off" placeholder="Only needed for hosted endpoints" /></label><div class="model-note"><span>●</span><div><strong>Local-first by default</strong><p>No model is bundled, and no paid service is required. Local models keep requests on this device; hosted endpoints receive the text you send them.</p></div></div><div class="settings-actions"><span id="saveStatus">Not saved</span><button class="save-button" id="saveModel">Save model settings</button></div></div></section>
+        <section class="library-view hidden" id="libraryView"></section>
+        <section class="preparation-view hidden" id="preparationView"></section>
+        <section class="mock-flow hidden" id="mockFlow">
+          <aside class="mock-steps"><p class="mock-kicker">CREATE MOCK<br />INTERVIEW</p><p class="mock-help">Enter the details &amp; select<br />what you need for this call.</p><div class="step active" data-step-label="1"><span>1</span><strong>Details</strong></div><div class="step" data-step-label="2"><span>2</span><strong>Preferences</strong></div><button class="tutorial-button">▣　View tutorial</button></aside>
+          <div class="mock-form" id="mockDetails"><button class="flow-close" id="closeMock">×</button><p class="form-hint">Have a link to the job post? Import the details automatically.</p><button class="job-link-button" type="button">Paste a job link</button><label>Company<input id="companyInput" placeholder="Company name" /></label><label>Job Description<textarea id="jobDescription" placeholder="Paste the job description or describe the role"></textarea></label><label class="session-type-field" for="sessionType">Session type<select id="sessionType"><option value="Mock interview">Mock interview</option><option value="Interview">Interview</option><option value="Regular call">Regular call</option></select></label><p class="context-label">Use saved context <span class="optional">Optional · stays on this device</span></p><div class="context-row"><fieldset class="context-picker"><legend>CV / Resumes</legend><div id="resumeContextOptions" class="context-options"><p class="context-empty">Loading resumes…</p></div></fieldset><fieldset class="context-picker"><legend>Documents</legend><div id="documentContextOptions" class="context-options"><p class="context-empty">Loading documents…</p></div></fieldset></div><div class="flow-actions"><button class="cancel-flow" id="cancelMock">Cancel</button><button class="next-button" id="nextPreferences">Next</button></div></div>
+          <div class="mock-form hidden" id="mockPreferences"><button class="flow-close" id="closePreferences">×</button><p class="form-hint">Session</p><div class="preference-row"><span>☆</span><div><strong>Select language</strong><small>Call language</small></div><select><option>English</option><option>Hindi</option></select></div><div class="preference-row"><span>▧</span><div><strong>Select model</strong><small>Speed and accuracy</small></div><select id="interviewModel"><option>Ollama model from settings</option></select></div><div class="preference-row"><span>⚙</span><div><strong>Answer Preferences</strong><small>Answer style and format</small></div><button class="outline-button" id="openAnswerPrefs">Configure</button></div><div class="preference-row"><span>✧</span><div><strong>AI instructions</strong><small>Additional guidance</small></div><button class="outline-button">＋ Add</button></div><p class="context-label extra-label">Extra</p><div class="preference-row"><span>ϟ</span><div><strong>Auto Generate (Beta)</strong><small>Off by default; drafts optional suggestions</small></div><button class="toggle" aria-pressed="false"></button></div><div class="preference-row"><span>▱</span><div><strong>Save transcript</strong><small>Saved locally for this session</small></div><button class="toggle on"></button></div><div class="flow-actions"><button class="cancel-flow" id="backDetails">Back</button><button class="next-button" id="createMockSession">Create mock session</button></div></div>
+          <div class="answer-modal hidden" id="answerPrefs"><div class="answer-settings"><button class="flow-close" id="closeAnswerPrefs">×</button><div class="answer-settings-side"><p class="form-hint">Answer preferences</p><p class="modal-help">Pick a preference to change how answers are shaped. You can change these anytime, including mid-call.</p><button class="answer-option active">☷　 Format <small>Script + bullets　›</small></button><button class="answer-option">◔　 Length <small>Balanced　›</small></button><button class="answer-option">♧　 Tone <small>Simple　›</small></button><button class="set-default">Set default</button></div><div class="answer-preview"><p class="form-hint">⌾ Question Type</p><select><option>Behavioral</option><option>Technical</option><option>Situational</option></select><p class="form-hint">✧ Answer Preview</p><div class="preview-box"><strong>◈ Question:</strong> Share a time you disagreed with a teammate on a technical choice.<hr /><strong>⭐ Answer:</strong> I once disagreed with a teammate about whether to use a third-party caching tool or build a simple in-memory cache for our backend service.<br /><br />• My teammate wanted to use Redis right away to save time.<br /><br />• We set up a quick test to measure the real traffic and latency.</div><button class="save-button" id="saveAnswerPrefs">Save</button></div></div></div>
+        </section>
+        <section class="live-interview hidden" id="liveInterview"><header class="live-header"><button id="fullscreenLive">↗ Fullscreen</button><button id="disconnectLive">Disconnect</button><strong>🦜 Fully Prepared</strong><span>◷ 00:00 (Free)</span></header><div class="live-body"><div class="interviewer-pane"><div class="interviewer-orb">◉</div><p>Mock interview</p><div class="live-controls"><button id="stopLive">Stop mic</button><button id="clearLive">× Clear</button><select aria-label="Call language"><option>◎ English</option></select><select id="micDevice" aria-label="Microphone"><option value="">Default microphone</option></select><span id="micStatus" class="mic-status">Mic off</span></div><div class="messages" id="messages"><div class="message">Hi. Good to meet you.<small>Interviewer 1 · now</small></div><div class="message">Tell me about yourself and your recent experience.<small>Interviewer 1 · now</small></div></div></div><div class="answer-pane"><div class="answer-empty">No messages yet.<br />Click “Answer” to start!</div><div class="answer-compose"><input placeholder="Type a manual message" /><button>◉</button><button>Send</button></div><button class="answer-button" id="answerLive">✧　Answer</button></div></div></section>
+      </main>
+    </div>
+    <script>
+      try {
+        const storedModel = localStorage.getItem('fullyPreparedModel');
+        if (storedModel) {
+          const parsedModel = JSON.parse(storedModel);
+          if (!parsedModel || typeof parsedModel !== 'object' || Array.isArray(parsedModel)) throw new Error('Invalid model settings');
+          for (const key of ['providerSelect', 'modelName', 'endpointUrl', 'apiKey']) if (parsedModel[key] !== undefined && typeof parsedModel[key] !== 'string') throw new Error('Invalid model setting value');
+        }
+      } catch (error) { localStorage.removeItem('fullyPreparedModel'); localStorage.removeItem('fullyPreparedMockDraft'); }
+    </script>
+    <script src="./session-state.js"></script>
+    <script src="./model-context.js"></script>
+    <script src="./company-provider.js"></script>
+    <script src="./provider-stream.js"></script>
+    <script src="./speech-output.js"></script>
+    <script src="./prompt-templates.js"></script>
+    <script src="./renderer.js"></script>
+    <script src="./resume-analysis.js"></script>
+    <script src="./resume-content.js"></script>
+    <script src="./library.js"></script>
+    <script src="./preparation-core.js"></script>
+    <script src="./preparation.js"></script>
+    <script src="./speech-settings-ui.js"></script>
+    <script src="./first-run-setup.js"></script>
+    <script src="./diagnostic-redaction.js"></script>
+    <script src="./job-link-ui.js"></script>
+    <script src="./readiness-ui.js"></script>
+    <script src="./crash-settings.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+node_modules/
+dist/
+coverage/
+.cache/
+*.log
+
+# Local and packaged installers/build archives
+*.zip
+*.exe
+electron-v*-win32-x64.zip
+
+# Local Whisper model; GitHub rejects files over 100 MB
+vendor/whisper/Release/ggml-base.bin
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

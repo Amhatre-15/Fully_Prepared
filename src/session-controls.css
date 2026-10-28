@@ -1,0 +1,26 @@
+.session-state {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 4px 10px;
+  border: 1px solid #2d5d4f;
+  border-radius: 999px;
+  color: #b8e9ca;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.session-paused .session-state {
+  border-color: #80652d;
+  background: #332b19;
+  color: #ffe3a0;
+}
+
+.live-interview.session-paused .interviewer-orb {
+  opacity: 0.55;
+}
+
+.live-interview :is(button, input):disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "fully-prepared",
+  "version": "1.0.0",
+  "description": "A visible desktop conversation preparation assistant.",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test",
+    "test:e2e": "node scripts/run-e2e.cjs",
+    "benchmark:cpu": "node scripts/benchmark-local.cjs --profile cpu",
+    "benchmark:gpu": "node scripts/benchmark-local.cjs --profile gpu",
+    "sign:windows": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/sign-windows.ps1",
+    "build:windows": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-windows-portable.ps1"
+  },
+  "devDependencies": {
+    "chrome-remote-interface": "^0.34.0",
+    "electron": "^41.10.6"
+  },
+  "build": {
+    "extraResources": [
+      {
+        "from": "vendor/whisper/Release",
+        "to": "whisper"
+      }
+    ]
+  },
+  "dependencies": {
+    "@tesseract.js-data/eng": "^1.0.0",
+    "mammoth": "^1.13.0",
+    "pdfjs-dist": "^6.4.299",
+    "tesseract.js": "^7.0.0"
+  },
+  "overrides": {
+    "sprintf-js": "^1.1.3"
+  }
+}
