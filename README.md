@@ -1,49 +1,83 @@
+<div align="center">
+
+<img src="docs/assets/fully-prepared-logo.svg" alt="Fully Prepared logo" width="128" />
+
 # Fully Prepared
 
-Version 1.0.0
+### A calm, local-first cockpit for better conversations
 
-An independent desktop foundation inspired by the publicly described workflow of ParakeetAI: a visible conversation cockpit with context capture, concise guidance, notes, preparation, and export.
+Capture context. Prepare with confidence. Stay present.
 
-## Run
+[![Version](https://img.shields.io/badge/version-1.0.0-17233D?style=for-the-badge)](https://github.com/Amhatre-15/Fully_Prepared/releases/tag/v1.0.0)
+[![Tests](https://img.shields.io/badge/tests-76%20passing-5ED8B2?style=for-the-badge)](https://github.com/Amhatre-15/Fully_Prepared)
+[![License: MIT](https://img.shields.io/badge/license-MIT-FFB86B?style=for-the-badge)](LICENSE)
+
+</div>
+
+## What it is
+
+Fully Prepared is an independent desktop conversation assistant for interviews, meetings, and practice sessions. It keeps preparation, notes, documents, transcripts, and guidance close at hand while keeping sensitive data local by default.
+
+## Highlights
+
+- **Call Sessions** — Searchable Interview, Regular, and Mock session dashboard with sorting, transcript actions, export, deletion confirmation, and interrupted-session recovery.
+- **Context-aware preparation** — Build a session from a company, role, session type, resume, and local documents with draft recovery.
+- **Live guidance** — Model-generated questions, answer coaching, system speech, multilingual microphone input, and a local Whisper.cpp transcription bridge.
+- **Local libraries** — Resumes, Documents, Question Bank, Resume Maker, and Headshots with explainable role-specific review and offline English OCR for scanned PDFs.
+- **Flexible model connections** — Ollama and OpenAI-compatible model discovery/chat through Electron's isolated main-process bridge.
+- **Privacy-minded defaults** — Local settings, drafts, and transcripts; API keys use Electron `safeStorage` where device encryption is available; crash diagnostics are opt-in and allowlisted.
+- **Hardened Electron shell** — Context isolation, no Node integration in the renderer, validated IPC, and microphone-only media permission.
+
+## Quick start
 
 ```powershell
 npm install
 npm start
 ```
 
-## Current scope
-
-- **Call Sessions** dashboard with search, Interview/Regular/Mock filters, sorting, transcript actions, export, confirmed deletion, and interrupted-session resume
-- Two-step session setup with company/role, session type, multi-select local resume/document context, and local draft recovery
-- Live interviewer flow with model-generated questions, system speech, answer coaching, multilingual microphone input, and a local Whisper.cpp transcription bridge
-- Ollama and OpenAI-compatible model discovery/chat through Electron's isolated main-process bridge
-- Local Resumes and Documents libraries, explainable job-specific resume review (including offline English OCR for scanned PDFs), Question Bank, Resume Maker, and local Headshots crop plus optional local Stable Diffusion image generation
-- Optional crash diagnostics are off by default and stay on device; reports contain allowlisted event metadata only and are exported only by explicit user action
-- Local settings, drafts, and transcripts; provider API keys use Electron `safeStorage` when device encryption is available
-- Electron security defaults: context isolation, no Node integration in the renderer, validated IPC, and microphone-only media permission
-
-This is a local-first product foundation, not yet a publicly signed release. Version 1 uses manual updates; there is no background updater. Dashboard/navigation E2E is covered, but clean-account installation and real CPU/GPU model inference on target hardware remain release checks. Public Windows distribution requires the publisher's trusted code-signing certificate. See [docs/FEATURE_STATUS.md](docs/FEATURE_STATUS.md), [docs/PROGRESS.md](docs/PROGRESS.md), [docs/PRIVACY.md](docs/PRIVACY.md), [docs/RELEASE_POLICY.md](docs/RELEASE_POLICY.md), [docs/SECURITY_AUDIT.md](docs/SECURITY_AUDIT.md), and [docs/PERFORMANCE_BASELINE.md](docs/PERFORMANCE_BASELINE.md).
-
-## Checks
+Run the automated checks with:
 
 ```powershell
 npm test
 ```
 
-Tests use Node's built-in test runner and a local mock provider. They do not require an API key or make external requests.
+The test suite uses Node's built-in test runner and a local mock provider. It does not require an API key or make external requests.
 
 ## Windows portable package
 
-On Windows, after `npm install`, run `npm run build:windows`. The self-contained package is written to `dist/fully-prepared-windows-portable`; it includes Electron, application dependencies, the Whisper.cpp runtime and base model, and applicable runtime notices. Run `Fully Prepared.exe` directly, or extract the package and run `install.ps1` for a per-user Start Menu installation. `uninstall.ps1` removes only the installed program after an explicit typed confirmation and leaves the Electron user profile (settings and saved data) intact. Choose a different output path inside `dist` when rebuilding; the build deliberately refuses to overwrite an existing package.
+After `npm install`, build the portable package with:
 
-This portable build has been smoke-checked for required files and notices. It is not code-signed, does not auto-update, and has not yet had the install/uninstall flow validated on a clean Windows account. Review `resources/app/docs/THIRD_PARTY_NOTICES.md` and its release gates before redistribution.
+```powershell
+npm run build:windows
+```
 
-The installer supplied for ParakeetAI is retained as a reference artifact. It is not copied, patched, or executed by this project.
+The package is written to `dist/fully-prepared-windows-portable`. It includes Electron, application dependencies, the Whisper.cpp runtime, and applicable runtime notices. Run `Fully Prepared.exe` directly, or extract the package and run `install.ps1` for a per-user Start Menu installation.
 
-## License
+The portable build is not code-signed, does not auto-update, and has not yet been validated on a clean Windows account. Review the release gates in [`docs/RELEASE_POLICY.md`](docs/RELEASE_POLICY.md) before redistribution.
 
-This project is released under the [MIT License](LICENSE).
+## Project status
+
+Version 1.0 is a local-first product foundation with manual updates. Dashboard/navigation E2E coverage is included, while clean-account installation and real CPU/GPU model inference on target hardware remain release checks. Public Windows distribution requires the publisher's trusted code-signing certificate.
+
+More detail:
+
+- [`docs/FEATURE_STATUS.md`](docs/FEATURE_STATUS.md) — feature readiness
+- [`docs/USER_GUIDE.md`](docs/USER_GUIDE.md) — user workflows
+- [`docs/PRIVACY.md`](docs/PRIVACY.md) — data handling
+- [`docs/SECURITY_AUDIT.md`](docs/SECURITY_AUDIT.md) — security notes
+- [`docs/PROGRESS.md`](docs/PROGRESS.md) — development progress
+- [`docs/THIRD_PARTY_NOTICES.md`](docs/THIRD_PARTY_NOTICES.md) — dependency notices
 
 ## Repository notes
 
-Generated dependencies and portable build outputs are intentionally excluded from Git. The Whisper model and packaged runtime archives are also excluded because GitHub's regular repository limit does not accept files larger than 100 MB. Install dependencies with `npm install` and follow the Windows portable-package instructions above to recreate local build artifacts.
+Generated dependencies and portable build outputs are intentionally excluded from Git. The Whisper model and packaged runtime archives are excluded because GitHub's regular repository limit does not accept files larger than 100 MB. Install dependencies with `npm install` and recreate local build artifacts with the commands above.
+
+## License
+
+Fully Prepared is released under the [MIT License](LICENSE).
+
+<div align="center">
+
+Made for clearer thinking when the conversation matters.
+
+</div>

@@ -1,0 +1,19 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Fully Prepared logo</title>
+  <desc id="desc">A rounded navy square with a mint preparation checklist and warm orange accent.</desc>
+  <defs>
+    <linearGradient id="bg" x1="48" y1="24" x2="468" y2="488" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17233D"/>
+      <stop offset="1" stop-color="#0B1225"/>
+    </linearGradient>
+    <linearGradient id="mint" x1="125" y1="120" x2="393" y2="397" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B5F4D2"/>
+      <stop offset="1" stop-color="#5ED8B2"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#bg)"/>
+  <path d="M150 132H358C370.15 132 380 141.85 380 154V358C380 370.15 370.15 380 358 380H150C137.85 380 128 370.15 128 358V154C128 141.85 137.85 132 150 132Z" stroke="url(#mint)" stroke-width="22"/>
+  <path d="M183 194H325M183 256H325M183 318H272" stroke="url(#mint)" stroke-width="20" stroke-linecap="round"/>
+  <path d="M105 191L125 211L165 171M105 253L125 273L165 233M105 315L125 335L165 295" stroke="#FFB86B" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M347 342L369 364L411 314" stroke="#FFB86B" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
