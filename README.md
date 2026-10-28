@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/assets/fully-prepared-logo.svg" alt="Fully Prepared logo" width="128" />
+<img src="docs/assets/fully-prepared-app-logo.svg" alt="Fully Prepared parrot logo" width="128" />
 
 # Fully Prepared
 
