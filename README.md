@@ -4,9 +4,9 @@
 
 # Fully Prepared
 
-### A calm, local-first cockpit for better conversations
+### Your AI-powered placement preparation cockpit
 
-Capture context. Prepare with confidence. Stay present.
+Practice interviews, polish your resume, and prepare for the opportunities ahead.
 
 [![Version](https://img.shields.io/badge/version-1.0.0-17233D?style=for-the-badge)](https://github.com/Amhatre-15/Fully_Prepared/releases/tag/v1.0.0)
 [![Tests](https://img.shields.io/badge/tests-76%20passing-5ED8B2?style=for-the-badge)](https://github.com/Amhatre-15/Fully_Prepared)
@@ -16,17 +16,32 @@ Capture context. Prepare with confidence. Stay present.
 
 ## What it is
 
-Fully Prepared is an independent desktop conversation assistant for interviews, meetings, and practice sessions. It keeps preparation, notes, documents, transcripts, and guidance close at hand while keeping sensitive data local by default.
+Fully Prepared is a local-first placement preparation platform for students and job seekers. It brings AI mock interviews, resume improvement, question-bank practice, document context, and personal preparation workflows into one focused desktop app.
 
-## Highlights
+The goal is simple: help you move from “I found a role” to “I am ready for the interview” with structured practice and practical feedback.
 
-- **Call Sessions** — Searchable Interview, Regular, and Mock session dashboard with sorting, transcript actions, export, deletion confirmation, and interrupted-session recovery.
-- **Context-aware preparation** — Build a session from a company, role, session type, resume, and local documents with draft recovery.
-- **Live guidance** — Model-generated questions, answer coaching, system speech, multilingual microphone input, and a local Whisper.cpp transcription bridge.
-- **Local libraries** — Resumes, Documents, Question Bank, Resume Maker, and Headshots with explainable role-specific review and offline English OCR for scanned PDFs.
-- **Flexible model connections** — Ollama and OpenAI-compatible model discovery/chat through Electron's isolated main-process bridge.
+## Placement preparation toolkit
+
+- **AI mock interviews** — Rehearse realistic Interview, Regular, and Mock sessions with spoken questions, answer coaching, multilingual microphone input, and local Whisper.cpp transcription.
+- **Resume polishing** — Import resumes and job descriptions, review role-specific alignment, identify uncovered requirements, and create a clearer, truthful resume without inventing experience.
+- **Question Bank** — Build and practice questions for common interviews, target roles, companies, and personal weak spots.
+- **Placement workspace** — Keep resumes, documents, transcripts, session notes, and preparation drafts organized in one searchable local workspace.
+- **Job-specific preparation** — Select a company, role, resume, and supporting documents to ground each practice session in the opportunity you are targeting.
+- **Local-first AI** — Connect Ollama or another OpenAI-compatible endpoint through Electron's isolated main-process bridge; use local models when you want preparation data to stay on your device.
 - **Privacy-minded defaults** — Local settings, drafts, and transcripts; API keys use Electron `safeStorage` where device encryption is available; crash diagnostics are opt-in and allowlisted.
-- **Hardened Electron shell** — Context isolation, no Node integration in the renderer, validated IPC, and microphone-only media permission.
+- **Secure desktop foundation** — Context isolation, no Node integration in the renderer, validated IPC, and microphone-only media permission.
+
+## Roadmap
+
+The foundation is designed to grow into a complete placement companion. Planned capabilities include:
+
+- Relevant-job discovery based on skills, resume, location, and target roles
+- Job-fit scoring and preparation plans for saved opportunities
+- Assisted job-application workflows with review-before-submit controls
+- Application tracking, deadlines, reminders, and follow-up preparation
+- More role-specific interview packs and placement analytics
+
+Job discovery and application automation are future capabilities, not active background automation in version 1.0.
 
 ## Quick start
 
@@ -57,7 +72,7 @@ The portable build is not code-signed, does not auto-update, and has not yet bee
 
 ## Project status
 
-Version 1.0 is a local-first product foundation with manual updates. Dashboard/navigation E2E coverage is included, while clean-account installation and real CPU/GPU model inference on target hardware remain release checks. Public Windows distribution requires the publisher's trusted code-signing certificate.
+Version 1.0 focuses on the core placement-preparation experience: mock interviews, resume workflows, document context, and question practice. Dashboard/navigation E2E coverage is included, while clean-account installation and real CPU/GPU model inference on target hardware remain release checks. Public Windows distribution requires the publisher's trusted code-signing certificate.
 
 More detail:
 
